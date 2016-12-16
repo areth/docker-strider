@@ -1,0 +1,19 @@
+{
+	"build-badge": "^0",
+    "cli": "^1.4.1",
+    "custom": "^1.0.0",
+    "ecosystem-client": "^1.2.1",
+    "email-notifier": "^1.0.0",
+    "env": "^0.5.1",
+    "extension-loader": "^0.4.5",
+    "git": "^1.0.0",
+    "github": "^2.3.3",
+    "heroku": "^0.1.1",
+    "mailer": "^0.2.0",
+    "metadata": "^0.0.3",
+    "node": "^1.0.0",
+    "simple-runner": "^1.0.1",
+    "ssh-deploy": "^1.0.0",
+    "docker_build": "^1.1.4",
+    "docker": "^1.5.2"
+}
