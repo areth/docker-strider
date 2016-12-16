@@ -14,9 +14,15 @@ RUN mkdir -p $STRIDER_SRC && cd $STRIDER_SRC && \
     # Checkout into $STRIDER_SRC
     git clone $STRIDER_GIT_SRC . && \
     [ "$STRIDER_VERSION" != 'master' ] && git checkout tags/$STRIDER_VERSION || git checkout master && \
-    rm -rf .git && \
+    rm -rf .git
+
+# Update strider plugins in package.json dependencies
+COPY plugins.json .
+COPY update-plugins.js .
+RUN node update-plugins.js
+
     # Install NPM deps
-    npm install && \
+RUN npm install && \
     # Create link to strider home dir so the modules can be used as a cache
     mv node_modules node_modules.cache && ln -s ${STRIDER_HOME}/node_modules node_modules && \
     # Allow strider user to update .restart file
